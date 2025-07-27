@@ -1,8 +1,14 @@
+
+import { exec } from 'child_process';
+
 import gulp from 'gulp';
-import shell from 'gulp-shell';
 
-gulp.task('default', shell.task(['npx parcel serve']));
+const { task } = gulp;
 
-gulp.task('test', shell.task([
-  'npx mocha'
-]));
+task('cypress', (cb) => {
+  exec('npx cypress run', (err, stdout, stderr) => {
+    console.log(stdout);
+    console.error(stderr);
+    cb(err);
+  });
+});
