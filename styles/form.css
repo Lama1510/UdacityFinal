@@ -2,15 +2,11 @@
 /* TODO: Manually optimize CSS styling. */
 /* Remove unused and unnecessary styling and selectors */
 
-form {}
+
 
 form {
-  display: flex;
+   display: flex;
   flex-direction: column;
-}
-
-
-form {
   max-width: 100px;
   background-color: #ffffff;
   padding: 20px;

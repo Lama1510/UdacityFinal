@@ -1,14 +1,8 @@
-
-import { exec } from 'child_process';
-
 import gulp from 'gulp';
+import shell from 'gulp-shell';
 
-const { task } = gulp;
+export const defaultTask = shell.task(["parcel index.html"]);
+gulp.task("default", defaultTask);
 
-task('cypress', (cb) => {
-  exec('npx cypress run', (err, stdout, stderr) => {
-    console.log(stdout);
-    console.error(stderr);
-    cb(err);
-  });
-});
+export const test = shell.task(["mocha"]);
+gulp.task("test", test);
