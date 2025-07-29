@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "udacity testing ",
   "type": "module",
+  "source": "src/index.js",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
+    "start": "gulp ",
+    "build": "gulp build  ",
     "test": "gulp test",
     "cypress": "gulp cypress",
     "mocha": "mocha",
@@ -20,13 +21,14 @@
     "eslint-plugin-cypress": "^5.1.0",
     "globals": "^16.3.0",
     "gulp": "^5.0.1",
-    "gulp-shell": "^0.8.0"
+    "gulp-mocha": "^10.0.1",
+    "gulp-shell": "^0.8.0",
+    "parcel": "^2.15.4"
   },
   "dependencies": {
     "chai": "^5.2.1",
     "gulp-cli": "^3.1.0",
     "mocha": "^11.7.1",
-    "parcel": "^2.15.4",
     "save-dev": "^0.0.1-security"
   }
 }

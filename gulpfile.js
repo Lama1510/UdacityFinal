@@ -1,8 +1,13 @@
 import gulp from 'gulp';
 import shell from 'gulp-shell';
+import mocha from 'gulp-mocha';
 
-export const defaultTask = shell.task(["parcel index.html"]);
-gulp.task("default", defaultTask);
 
-export const test = shell.task(["mocha"]);
-gulp.task("test", test);
+// Cypress test task
+gulp.task('cypress', shell.task(['npx cypress run']));
+
+
+export function test() {
+  return gulp.src('test/**/*.js', { read: false })
+    .pipe(mocha({ reporter: 'spec' }));
+}

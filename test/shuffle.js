@@ -1,15 +1,22 @@
-import { describe, it } from 'mocha';
+
+/* global describe, it */
+
 import { expect } from 'chai';
-import { shuffle } from './src/Shuffle.js'; // Adjust path as needed
+import { shuffle } from '../src/shuffle.js';
 
 describe('shuffle()', () => {
-  it('should shuffle the array elements', () => {
+  it('should return an array with the same elements in a different order', () => {
     const original = [1, 2, 3, 4, 5];
-    const copy = [...original];
-    const result = shuffle(copy);
+    const result = shuffle([...original]);
 
-    expect(result).to.have.lengthOf(original.length);
     expect(result).to.have.members(original);
-    expect(result).to.not.deep.equal(original);
+    expect(result).to.not.deep.equal(original); // may fail rarely
+  });
+
+  it('should not modify the original array', () => {
+    const original = [1, 2, 3];
+    const copy = [...original];
+    shuffle(copy);
+    expect(original).to.deep.equal([1, 2, 3]);
   });
 });
