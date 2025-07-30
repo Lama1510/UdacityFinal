@@ -11,3 +11,11 @@ export function test() {
   return gulp.src('test/**/*.js', { read: false })
     .pipe(mocha({ reporter: 'spec' }));
 }
+
+// gulpfile.mjs or gulpfile.js 
+function defaultTask(cb) {
+  console.log('Running default Gulp task...');
+  cb(); // Signal async completion
+}
+
+export default defaultTask;

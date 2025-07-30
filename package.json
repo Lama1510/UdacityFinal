@@ -5,8 +5,8 @@
   "type": "module",
   "source": "src/index.js",
   "scripts": {
-    "start": "gulp ",
-    "build": "gulp build  ",
+    "start": "gulp",
+    "build": "gulp build",
     "test": "gulp test",
     "cypress": "gulp cypress",
     "mocha": "mocha",
