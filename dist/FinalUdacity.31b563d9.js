@@ -1111,7 +1111,7 @@ const submitSet = (e, setCards)=>{
     }
 };
 
-},{"./errors.js":"hSKUY","./utilityRenderFunctions.js":"guzyD","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./cardSetsPage.js":"5j6JS"}],"i5xgP":[function(require,module,exports,__globalThis) {
+},{"./cardSetsPage.js":"5j6JS","./errors.js":"hSKUY","./utilityRenderFunctions.js":"guzyD","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"i5xgP":[function(require,module,exports,__globalThis) {
 //DO NOT CHANGE ANYTHING IN THIS FILE//
 //This file is responsible for rendering the About page,
 //including loading any content about the application and organization.

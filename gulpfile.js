@@ -1,21 +1,21 @@
-import gulp from 'gulp';
-import shell from 'gulp-shell';
-import mocha from 'gulp-mocha';
+import gulp from "gulp";
+import shell from "gulp-shell";
+
+// ========== Build Tasks ==========
+gulp.task("build", shell.task("parcel build index.html"));
+gulp.task("parcel server", shell.task("parcel index.html"));
+
+// ========== Test Tasks ==========
+// Unit test with Mocha
+//gulp.task("unit test", shell.task("npx run mocha"));
+gulp.task("unit test", shell.task("npx mocha"));
 
 
-// Cypress test task
-gulp.task('cypress', shell.task(['npx cypress run']));
+// End-to-End test with Cypress
+gulp.task("End to End test", shell.task("npx cypress run"));
 
+// Combined test task
+gulp.task("test", gulp.series("unit test", "End to End test"));
 
-export function test() {
-  return gulp.src('test/**/*.js', { read: false })
-    .pipe(mocha({ reporter: 'spec' }));
-}
-
-// gulpfile.mjs or gulpfile.js 
-function defaultTask(cb) {
-  console.log('Running default Gulp task...');
-  cb(); // Signal async completion
-}
-
-export default defaultTask;
+// ========== Default Task ==========
+gulp.task("default", gulp.series("build", "parcel server"));
