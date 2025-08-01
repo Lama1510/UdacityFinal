@@ -130,7 +130,7 @@
 
   // Only insert newRequire.load when it is actually used.
   // The code in this file is linted against ES5, so dynamic import is not allowed.
-  // INSERT_LOAD_HERE
+  function $parcel$resolve(url) {  url = importMap[url] || url;  return import.meta.resolve(distDir + url);}newRequire.resolve = $parcel$resolve;
 
   Object.defineProperty(newRequire, 'root', {
     get: function () {
@@ -1040,7 +1040,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "shuffle", ()=>shuffle);
 const shuffle = (cards)=>{
-    var current = cards.length();
+    var current = cards.length;
     var newCardsArray = [
         ...cards
     ];
@@ -1120,10 +1120,9 @@ const submitSet = (e, setCards)=>{
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderAboutPage", ()=>renderAboutPage);
-var _aboutImagePng = require("../images/aboutImage.png");
-var _aboutImagePngDefault = parcelHelpers.interopDefault(_aboutImagePng);
 // This function creates a header element
 var _utilityRenderFunctionsJs = require("./utilityRenderFunctions.js");
+const aboutPageImage = new URL(require("9a140e5d0ebb17b1")).href;
 const renderAboutPage = ()=>{
     // Clear the main content area
     const main = document.querySelector("main");
@@ -1142,7 +1141,7 @@ const renderAboutPage = ()=>{
     let text = "Whether you're studying at night or during the day, Study Night's flashcard application is designed to help you grow your skills in any subject. Whether you're preparing for an exam or learning a new language, Study Night makes it easy to create flashcard sets that are available anytime, anywhere.\n\nStudy Night was created by experienced educators and developers who are passionate about helping students achieve their goals and making learning more accessible.";
     const aboutP = (0, _utilityRenderFunctionsJs.createElement)("p", text);
     // Create and set up the image
-    const aboutImage = (0, _utilityRenderFunctionsJs.createImage)((0, _aboutImagePngDefault.default), "Child Studying");
+    const aboutImage = (0, _utilityRenderFunctionsJs.createImage)(aboutPageImage, "Child Studying");
     // Append the text elements to the text container
     textContainer.append(heading, subHeading, aboutP);
     // Append the text container and image to the outer container
@@ -1151,17 +1150,19 @@ const renderAboutPage = ()=>{
     main.append(containerOuter);
 };
 
-},{"../images/aboutImage.png":"khGba","./utilityRenderFunctions.js":"guzyD","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"khGba":[function() {},{}],"bA49a":[function(require,module,exports,__globalThis) {
+},{"9a140e5d0ebb17b1":"Z7eda","./utilityRenderFunctions.js":"guzyD","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"Z7eda":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("aboutImage.4141cd96.png") + "?" + Date.now();
+
+},{}],"bA49a":[function(require,module,exports,__globalThis) {
 //DO NOT CHANGE ANYTHING IN THIS FILE//
 // This file is responsible for loading the home page
 //Imports image for homepage
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderHomePage", ()=>renderHomePage);
-var _homePagePng = require("../images/homePage.png");
-var _homePagePngDefault = parcelHelpers.interopDefault(_homePagePng);
 //Helper functions
 var _utilityRenderFunctionsJs = require("./utilityRenderFunctions.js");
+const homePageImage = new URL(require("2bde9b1ad27bc497")).href;
 //Renders home page
 const renderHomePage = ()=>{
     //Gets main element
@@ -1172,7 +1173,7 @@ const renderHomePage = ()=>{
     //Creates subheader element
     const subHeading = (0, _utilityRenderFunctionsJs.createElement)("h2", "A Digital Study Solution for the Modern World");
     //Creates elements
-    const image = (0, _utilityRenderFunctionsJs.createImage)((0, _homePagePngDefault.default), "Desk of laptops");
+    const image = (0, _utilityRenderFunctionsJs.createImage)(homePageImage, "Desk of laptops");
     //Container for elements
     const homeContainer = document.createElement("div");
     homeContainer.className = "homeContainer";
@@ -1180,6 +1181,9 @@ const renderHomePage = ()=>{
     main.append(homeContainer);
 };
 
-},{"../images/homePage.png":"4K0cp","./utilityRenderFunctions.js":"guzyD","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"4K0cp":[function() {},{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire7929", {})
+},{"2bde9b1ad27bc497":"11gjO","./utilityRenderFunctions.js":"guzyD","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"11gjO":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("homePage.32863026.png") + "?" + Date.now();
+
+},{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire7929", {}, "./", "/")
 
 //# sourceMappingURL=FinalUdacity.31b563d9.js.map

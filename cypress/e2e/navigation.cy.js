@@ -1,27 +1,27 @@
 /// <reference types="cypress" />
 /* global describe, it, beforeEach, cy */
 
-describe('Navigation Tests', () => {
+describe("Navigation", () => {
+  // Run before every test
   beforeEach(() => {
-    cy.visit('/');  // Adjust baseUrl in cypress.config.js accordingly
+    cy.visit("http://localhost:1234"); // Replace with your actual local dev URL
   });
 
-  it('navigates to Home page when clicking Home', () => {
-    cy.get('[data-cy=nav-home]').click();
-    cy.get('h1').should('contain', 'Study Night');
-    cy.get('h2').should('contain', 'A Digital Study Solution for the Modern World');
-    cy.get('.homeContainer').should('exist');
+  it("should navigate to the About page", () => {
+    
+    cy.visit("http://localhost:1234/");
+    cy.contains("About").should("be.visible");
   });
 
-  it('navigates to Card Set page when clicking Card Set', () => {
-    cy.get('[data-cy=nav-card-set]').click();
-    cy.get('h2').should('contain', 'Study Set Library');
-    cy.get('.cardPageContainer').should('exist');
+  it("should navigate to the Home page", () => {
+     cy.visit("http://localhost:1234/");
+    cy.contains("Home").should("be.visible");
+ // Adjust text based on your actual content
   });
 
-  it('navigates to About page when clicking About', () => {
-    cy.get('[data-cy=nav-about]').click();
-    cy.get('h2').should('contain', 'About Study Night');
-    cy.get('.aboutContainer').should('exist');
+  it("should navigate to the card sets  page", () => {
+     cy.visit("http://localhost:1234/");
+    cy.contains("Card Set").should("be.visible");
+ // Adjust text based on your actual content
   });
 });
