@@ -1000,12 +1000,25 @@ const createHeader = (headerType, text, dataCy)=>{
 const createToggleButton = (text)=>{
     const button = document.createElement("button");
     button.textContent = text;
-    button.addEventListener("click", (element)=>{
-        element.classList.toggle("notVisible");
+    button.addEventListener("click", ()=>{
+        const form = document.querySelector('[data-cy="set_form"]');
+        if (form) form.classList.toggle("notVisible");
     });
     return button;
 };
-// Form Helper Functions
+/* 
+
+const createToggleButton = (text) => { const button = document.createElement("button");
+button.textContent = text
+  button.addEventListener("click", element => {
+    element.classList.toggle("notVisible");
+  });
+
+  return button;
+};
+
+
+*/ // Form Helper Functions
 // Helper function to create a label element
 const createLabel = (text, htmlFor)=>{
     var label = document.createElement("label");

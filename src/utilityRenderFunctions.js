@@ -29,6 +29,24 @@ const createHeader = (headerType, text, dataCy) => {
   header.textContent = text; header.setAttribute("data-cy", dataCy); return header; }
 
 // Create a button that toggles the visibility of the form
+
+const createToggleButton = (text) => {
+  const button = document.createElement("button");
+  button.textContent = text;
+
+  button.addEventListener("click", () => {
+    const form = document.querySelector('[data-cy="set_form"]');
+    if (form) {
+      form.classList.toggle("notVisible");
+    }
+  });
+
+  return button;
+};
+
+
+/* 
+
 const createToggleButton = (text) => { const button = document.createElement("button");
 button.textContent = text
   button.addEventListener("click", element => {
@@ -37,6 +55,10 @@ button.textContent = text
 
   return button;
 };
+
+
+*/
+
 
 // Form Helper Functions
 // Helper function to create a label element
